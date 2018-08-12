@@ -26,6 +26,19 @@ public class Company {
   @JsonProperty("Description")
   private String description;
 
+  public Company() {
+
+  }
+
+
+  public Company(Integer companyId, String companyName, String description) {
+    super();
+    this.companyId = companyId;
+    this.companyName = companyName;
+    this.description = description;
+  }
+
+
   public Integer getCompanyId() {
     return companyId;
   }
