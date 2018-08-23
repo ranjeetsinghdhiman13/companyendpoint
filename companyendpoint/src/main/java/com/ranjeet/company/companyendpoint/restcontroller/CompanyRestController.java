@@ -24,15 +24,9 @@ public class CompanyRestController {
 
   @GetMapping("/getall")
   public ResponseEntity<List<Company>> getAll() {
-    Company saveCompany = new Company(1, "FromCode", "FromCode");
-    logger.log(Level.INFO, "Saving company from code");
-    companyRepository.save(saveCompany);
-
     logger.log(Level.INFO, "Getting all companies");
     List<Company> companyList = new ArrayList<Company>();
     companyList.addAll(companyRepository.getAllCompanies());
-
-    logger.log(Level.INFO, companyRepository.findAll().toString());
     return new ResponseEntity<List<Company>>(companyList, HttpStatus.OK);
   }
 
